@@ -1,0 +1,4 @@
+farm-haystack~=1.13
+requests~=2.28.2
+streamlit~=1.18.1
+st-annotated-text~=3.0.0
