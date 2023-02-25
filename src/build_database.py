@@ -42,6 +42,8 @@ def build_db(files_to_index, file_meta,
              embedding_dim=768,
              similarity='dot_product',
              duplicate_documents='skip'):
+    if not os.path.isdir(db_folder):
+        os.mkdir(db_folder)
     db_path = f'{db_folder}/{db_name}.db'
     db_index = f"{db_folder}/{db_name}.faiss"
     db_config = f"{db_folder}/{db_name}.json"

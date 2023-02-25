@@ -19,6 +19,7 @@ Version `α:1.4`
 
 2. If you have a NVIDIA GPU, you may want the GPU version 
   ```cmd 
+  conda activate env/
   conda install -c conda-forge libfaiss-avx2
   pip install transformers[torch]
   ```
@@ -94,8 +95,10 @@ link the MKL library for faster speed.
   "C:\Program Files (x86)\Intel\oneAPI\setvars.bat"
   "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\bin\nvvp.bat"
   ```
+  MKL library will be loaded automatically. If you don't need GPU, set `-DFAISS_ENABLE_GPU=OFF`
+
   ```cmd
-  "C:/Program Files/CMake/bin/cmake.exe" -B build ^ 
+  "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -B build ^ 
     -DFAISS_ENABLE_PYTHON=ON ^
     -DFAISS_ENABLE_GPU=ON ^
     -DBUILD_SHARED_LIBS=ON ^ 
@@ -104,8 +107,7 @@ link the MKL library for faster speed.
     -DFAISS_OPT_LEVEL=general ^
     -DBUILD_TESTING=OFF ^
     -DPython_EXECUTABLE="path to your python.exe" ^
-    -DBLA_VENDOR=Intel10_64_dyn   ^
-    -DMKL_LIBRARIES="C:/Program Files (x86)/Intel/oneAPI/mkl/2023.0.0/lib/intel64/mkl_blas95_lp64.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.0.0/lib/intel64/mkl_sycl.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.0.0/lib/intel64/mkl_intel_lp64.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.0.0/lib/intel64/mkl_intel_thread.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.0.0/lib/intel64/mkl_tbb_thread.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.0.0/lib/intel64/mkl_core.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.0.0/lib/intel64/mkl_blacs_msmpi_lp64.lib;C:/Program Files (x86)/Intel/oneAPI/compiler/2023.0.0/windows/compiler/lib/intel64_win/libiomp5md.lib" .
+    -DBLA_VENDOR=Intel10_64_dyn    
   ```
 * Open `faiss/build/ALL_BUILD.vcxproj` with Visual Studio 2019; select `release` and then build `swigfaiss`
 * Build wheel

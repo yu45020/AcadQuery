@@ -17,6 +17,7 @@ env/
 *.json
 haystack/
 data/
+
 # Distribution / packaging
 .Python
 build/

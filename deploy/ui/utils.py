@@ -14,6 +14,7 @@ HS_VERSION = "hs_version"
 DOC_REQUEST = "query"
 DOC_FEEDBACK = "feedback"
 DOC_UPLOAD = "file-upload"
+ 
 
 
 def haystack_init_():
