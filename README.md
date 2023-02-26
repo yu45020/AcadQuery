@@ -12,6 +12,7 @@ Version `α:1.4`
 1. Create virtual environment. Recommend ``mamba`` rather than `conda` to install packages
   ```cmd
   conda create -p env/  python=3.9 
+  conda activate env/
   pip install --upgrade pip
   pip install farm-haystack[sql,only-faiss,inmemorygraph]
   pip install streamlit st-annotated-text
