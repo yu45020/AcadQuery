@@ -14,11 +14,10 @@ Version `α:1.4`
   conda create -p env/  python=3.9 
   conda activate env/
   pip install --upgrade pip
-  pip install farm-haystack[sql,only-faiss,inmemorygraph]
-  pip install streamlit st-annotated-text
+  pip install farm-haystack[sql,only-faiss,inmemorygraph]  streamlit st-annotated-text
   ```
 
-2. If you have a NVIDIA GPU, you may want the GPU version 
+2. You may want the GPU version if possible
   ```cmd 
   conda activate env/
   conda install -c conda-forge libfaiss-avx2
