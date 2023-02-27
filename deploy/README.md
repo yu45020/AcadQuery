@@ -9,26 +9,33 @@ Search methods include neural network based search (BERT based) and simple dicti
 Version `α:1.4`
 
 ## How To Start Web Server
-1. Create virtual environment. Recommend ``mamba`` rather than `conda` to install packages
+1. Create virtual environment. Recommend using ``mamba`` rather than `conda` to install packages
   ```cmd
   conda create -p env/  python=3.9 
   conda activate env/
   pip install --upgrade pip
-  pip install farm-haystack[sql,only-faiss,inmemorygraph] streamlit st-annotated-text
+  pip install farm-haystack[sql,only-faiss,inmemorygraph]  streamlit st-annotated-text
   ```
 
 2. You may want the GPU version if possible
+  ```cmd
+  conda activate env/
+  pip install farm-haystack[only-faiss-gpu] transformers[torch]
+  ```
+  Windows users may have trouble installing the `faiss-gpu` in the `farm-haystack`. An alternative is 
   ```cmd 
   conda activate env/
-  conda install -c conda-forge libfaiss-avx2
-  pip install transformers[torch]
+  conda install -c conda-forge faiss-gpu
   ```
 
-2. Copy `data/db-*` to `deploy/` and run
+1. Copy `data/db-*` folders to `data/` and run
   ```cmd  
-  cd deploy
-  python -m streamlit run ui/Search.py --server.runOnSave=true --server.address=127.0.0.1
+  ../env/python -m streamlit run ui/Search.py --server.runOnSave=true --server.address=127.0.0.1
   ``` 
+  Windows uers may create a `.bat` file with 
+  ```cmd 
+  %~dp0./env/python -m streamlit run ui/Search.py --server.runOnSave=true --server.address=127.0.0.1
+  ```
 
 **Note**: without the ``--server.address=127.0.0.1``, `streamlit`will broadcast your ip address to the world.
 
@@ -83,17 +90,18 @@ Use virtual environment to manage python packages. Many of them may have conflic
 
 ### Build FAISS From Source
 
-Windows users who have Intel cpu and want faster matching speed may want to compile it from source. You can manually
+Windows users who have Intel cpu and want faster matching speed may want to compile the `avx2` version from source. You can 
 link the MKL library for faster speed.
 
 * Install  `visual studio 2019`  (desktop development with C++), `cuda toolkit`, `Intel OneAPI toolkit`,
   and `swig`
-* use conda env to activate desired python version
-* assume install with default settings, in ``cmd``, activate environment variables
+* Use conda env to activate desired python version
+* Download the latest `faiss` release. 
+* Assume install with default settings, in ``cmd``, activate environment variables
 
   ```cmd
+  conda activate "path to desire python env"
   "C:\Program Files (x86)\Intel\oneAPI\setvars.bat"
-  "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\bin\nvvp.bat"
   ```
   MKL library will be loaded automatically. If you don't need GPU, set `-DFAISS_ENABLE_GPU=OFF`
 
@@ -102,18 +110,21 @@ link the MKL library for faster speed.
     -DFAISS_ENABLE_PYTHON=ON ^
     -DFAISS_ENABLE_GPU=ON ^
     -DBUILD_SHARED_LIBS=ON ^ 
-    -DCUDAToolkit_ROOT="C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/" ^
     -DCMAKE_BUILD_TYPE=Release ^
-    -DFAISS_OPT_LEVEL=general ^
-    -DBUILD_TESTING=OFF ^
-    -DPython_EXECUTABLE="path to your python.exe" ^
-    -DBLA_VENDOR=Intel10_64_dyn    
+    -DFAISS_OPT_LEVEL=avx2 ^
+    -DBUILD_TESTING=OFF 
   ```
-* Open `faiss/build/ALL_BUILD.vcxproj` with Visual Studio 2019; select `release` and then build `swigfaiss`
-* Build wheel
+  `maxCpuCount` default is 1, include the switch without number will use all cores
+  ```cmd
+  MSBuild.exe build/faiss/faiss_avx2.vcxproj /property:Configuration=Release /maxCpuCount:12
+  ```
+  Or you may use Visual Studio to open `faiss/build/ALL_BUILD.vcxproj`, select `release`, and build `swigfaiss_avx2`
+
+* Build python wheel
   ```cmd
   cd build/faiss/python/
   python setup.py bdist_wheel
+  python setup.py install
   ```
 
 ## TODO

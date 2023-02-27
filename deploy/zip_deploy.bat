@@ -1,0 +1,1 @@
+zip -1 -u -r deploy.zip data imgs ui requirements.txt README.md
