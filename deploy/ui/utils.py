@@ -32,7 +32,7 @@ def haystack_version():
 
 
 def get_document_by_answer_id(documents: list, answer: dict):
-    target_doc_id = answer['document_id']
+    target_doc_id = answer['document_ids'][0]
     for doc in documents:
         if doc['id'] == target_doc_id:
             return doc

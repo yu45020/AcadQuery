@@ -5,7 +5,8 @@ __pycache__/
 *.idea
 grobid_client_python/
 *.whl
-
+*.zip
+*.7z
 *.history
 # C extensions
 *.so
