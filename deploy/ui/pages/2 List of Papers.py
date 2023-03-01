@@ -1,6 +1,6 @@
 import streamlit as st
 
-md_file = 'data/list_of_papers.md'
+md_file = 'documents/list_of_papers.md'
 
 
 def set_state_if_absent(key, value):

@@ -6,8 +6,6 @@
 Academic Paper Semantic Search is a local search engine. It provides plain text search on a collection of pdf papers.
 Search methods include neural network based search (BERT based) and simple dictionary based matching (`BM25`).
 
-Version `α:1.4`
-
 ## How To Start Web Server
 1. Create virtual environment. Recommend using ``mamba`` rather than `conda` to install packages
   ```cmd

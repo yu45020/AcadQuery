@@ -6,6 +6,7 @@ from annotated_text import annotation
 from markdown import markdown
 
 from ui.utils import query, haystack_version, haystack_init_
+from ui.__init__ import version
 
 DEFAULT_QUESTION_AT_STARTUP = os.getenv("DEFAULT_QUESTION_AT_STARTUP", "what's brand equity?")
 DEFAULT_ANSWER_AT_STARTUP = os.getenv("DEFAULT_ANSWER_AT_STARTUP", " ")
@@ -33,6 +34,7 @@ st.set_page_config(page_title="Academic Paper Semantic Search",
                    )
 
 st.markdown("# Academic Paper Semantic Search")
+st.markdown(f'<div style="text-align: right"> Version: {version} </div> ', unsafe_allow_html=True)
 
 
 def set_state_if_absent(key, value):
