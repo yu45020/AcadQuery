@@ -2,7 +2,8 @@
 
 import os
 from typing import List, Dict, Any, Tuple, Optional
-
+import requests
+import json
 import requests
 import streamlit as st
 
@@ -14,7 +15,6 @@ HS_VERSION = "hs_version"
 DOC_REQUEST = "query"
 DOC_FEEDBACK = "feedback"
 DOC_UPLOAD = "file-upload"
- 
 
 
 def haystack_init_():
@@ -32,7 +32,7 @@ def haystack_version():
 
 
 def get_document_by_answer_id(documents: list, answer: dict):
-    target_doc_id = answer['document_ids'][0]
+    target_doc_id = answer['document_id']
     for doc in documents:
         if doc['id'] == target_doc_id:
             return doc
@@ -51,12 +51,15 @@ def query(query, query_pipe, top_k_param_name='top_k',
               "Retriever": {top_k_param_name: top_k_retriever},
               "Reader": {"top_k": top_k_reader}}
 
-    response = query_pipe.run(query=query, params=params)
-
+    query_result = requests.get(f"""
+    http://127.0.0.1:7999/?question="{query}"&retriever_top_k={top_k_retriever}&reader_top_k={top_k_reader}&search_type="dense"
+    """)
+    # response = query_pipe.run(query=query, params=params)
+    response = query_result.json()
     # Format response
     results = []
-    answers = [i.to_dict() for i in response["answers"]]
-    documents = [i.to_dict() for i in response['documents']]
+    answers = [i  for i in response["answers"]]
+    documents = [i  for i in response['documents']]
     for answer in answers:
         if bool(answer):
             doc = get_document_by_answer_id(documents, answer)

@@ -163,13 +163,13 @@ def write_query_result(result_tab, search_result, search_raw):
         result_tab.write(search_raw)
 
 
-def load_pipeline():
-    if ENABLE_SEARCH and st.session_state.query_pipe is None:
-        with st.spinner("⌛️ &nbsp;&nbsp; Haystack is loading databases..."):
-            # query_pipe_dict = haystack_init_()
-            st.session_state.query_pipe = haystack_init_()
-    elif ENABLE_SEARCH is False:
-        st.write("Search is disabled")
+# def load_pipeline():
+#     if ENABLE_SEARCH and st.session_state.query_pipe is None:
+#         with st.spinner("⌛️ &nbsp;&nbsp; Haystack is loading databases..."):
+#             # query_pipe_dict = haystack_init_()
+#             st.session_state.query_pipe = haystack_init_()
+#     elif ENABLE_SEARCH is False:
+#         st.write("Search is disabled")
 
 
 # Run button
@@ -177,7 +177,7 @@ def load_pipeline():
 if run_pressed and question:
     # reset_results()
 
-    load_pipeline()
+    # load_pipeline()
 
     st.session_state.question = question
     with dense_result_tab:
@@ -186,7 +186,7 @@ if run_pressed and question:
         ):
             #
             st.session_state.results_dense, st.session_state.raw_json_dense = query(
-                question, query_pipe=st.session_state.query_pipe['dense'],
+                question, query_pipe='dense',  # st.session_state.query_pipe['dense'],
                 top_k_param_name='top_k',
                 top_k_reader=top_k_reader, top_k_retriever=top_k_retriever
             )
@@ -198,7 +198,8 @@ if run_pressed and question:
         ):
             # reset_results()
             st.session_state.results_sparse, st.session_state.raw_json_sparse = query(
-                question, query_pipe=st.session_state.query_pipe['sparse'],
+                question,
+                query_pipe='sparse',  # st.session_state.query_pipe['sparse'],
                 top_k_param_name='top_k',
                 top_k_reader=top_k_reader, top_k_retriever=top_k_retriever
             )
@@ -208,3 +209,13 @@ if st.session_state.results_dense:
 if st.session_state.results_sparse:
     write_query_result(sparse_result_tab, st.session_state.results_sparse, st.session_state.raw_json_sparse)
 last_query.write(f"Last Query: {st.session_state.question}")
+
+#
+# import requests
+#
+#
+# query_result = requests.get(f"""
+# http://127.0.0.1:7999/?question="brand"&retriever_top_k=3&reader_top_k=3&search_type="dense"
+# """)
+# a = query_result.json()
+# [i  for i in a["answers"]][0].keys()
