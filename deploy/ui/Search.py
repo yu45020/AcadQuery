@@ -7,6 +7,7 @@ from markdown import markdown
 
 from ui.utils import query, haystack_version, haystack_init_
 from ui.__init__ import version
+# TODO: Rewrite API rest wait time
 
 DEFAULT_QUESTION_AT_STARTUP = os.getenv("DEFAULT_QUESTION_AT_STARTUP", "what's brand equity?")
 DEFAULT_ANSWER_AT_STARTUP = os.getenv("DEFAULT_ANSWER_AT_STARTUP", " ")
