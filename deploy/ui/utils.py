@@ -9,7 +9,8 @@ import streamlit as st
 
 from ui.load_db import load_query_pipelines
 
-API_ENDPOINT = os.getenv("API_ENDPOINT", "http://localhost:8000")
+# API_ENDPOINT = os.getenv("API_ENDPOINT", "http://localhost:8000")
+API_ENDPOINT = 'http://127.0.0.1:7999/?'
 STATUS = "initialized"
 HS_VERSION = "hs_version"
 DOC_REQUEST = "query"
@@ -39,27 +40,37 @@ def get_document_by_answer_id(documents: list, answer: dict):
     raise ValueError
 
 
-def query(query, query_pipe, top_k_param_name='top_k',
-          filters={}, top_k_reader=5, top_k_retriever=5) -> Tuple[
+def query(query, search_type, top_k_param_name='top_k',
+          filters={}, reader_top_k=5, retriever_top_k=5) -> Tuple[
     List[Dict[str, Any]], Dict[str, str]]:
     """
     Send a query to the REST API and parse the answer.
     Returns both a ready-to-use representation of the results and the raw JSON.
     """
 
-    params = {"filters": filters,
-              "Retriever": {top_k_param_name: top_k_retriever},
-              "Reader": {"top_k": top_k_reader}}
-
+    # params = {"filters": filters,
+    #           "Retriever": {top_k_param_name: top_k_retriever},
+    #           "Reader": {"top_k": top_k_reader}}
+    # req = {"question": query,
+    #        "retriever_top_k": retriever_top_k,
+    #        "reader_top_k": reader_top_k,
+    #        "search_type": search_type}
+    # query_result = requests.post(API_ENDPOINT, data=req)
     query_result = requests.get(f"""
-    http://127.0.0.1:7999/?question="{query}"&retriever_top_k={top_k_retriever}&reader_top_k={top_k_reader}&search_type="dense"
-    """)
+    http://127.0.0.1:7999/?question={query}&retriever_top_k={retriever_top_k}&reader_top_k={reader_top_k}&search_type={search_type}""")
+
+    if query_result.status_code >= 400 and query_result.status_code != 503:
+        raise Exception(f"{vars(query_result)}")
     # response = query_pipe.run(query=query, params=params)
     response = query_result.json()
+
+    if "errors" in response:
+        raise Exception(", ".join(response["errors"]))
+
     # Format response
     results = []
-    answers = [i  for i in response["answers"]]
-    documents = [i  for i in response['documents']]
+    answers = [i for i in response["answers"]]
+    documents = [i for i in response['documents']]
     for answer in answers:
         if bool(answer):
             doc = get_document_by_answer_id(documents, answer)

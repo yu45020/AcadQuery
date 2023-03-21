@@ -3,8 +3,21 @@
 --------
 
 
-Academic Paper Semantic Search is a local search engine. It provides plain text search on a collection of pdf papers.
+Academic Paper Semantic Search is a localized search engine, providing plain text search on a collection of pdf papers.
 Search methods include neural network based search (BERT based) and simple dictionary based matching (`BM25`).
+
+It requires Human Intelligence on top of Artificial Intelligence, so it will not be a local ``ChatGPT``. 
+
+The current version is designed to run in laptops without GPU, so large neural network models are not used. But this program modularizes the search algorithm, so  you can easily swap the state of art models. Lite versions are strongly recommended.
+
+If you are interested in fine-tuning large models with limited GPU, I strongly recommend one of the BOOM paper below (or the first figure). Training a model with 100+ Billion parameters requires a different skill set.  It's easy to torture one Nvidia 2080 Ti for a year, but it is not enough.
+
+  * [The BigScience Architecture & Scaling Group(2022) *What Language Model to Train if You Have One Million GPU Hours?*](https://arxiv.org/abs/2210.15424)
+
+
+# Architecture 
+
+![img](imgs/architecture.png)
 
 ## How To Start Web Server
 1. Create virtual environment. Recommend using ``mamba`` rather than `conda` to install packages
@@ -30,11 +43,15 @@ Search methods include neural network based search (BERT based) and simple dicti
   ```cmd  
   ../env/python -m streamlit run ui/Search.py --server.runOnSave=true --server.address=127.0.0.1
   ``` 
-  Windows uers may create a `.bat` file with 
+ 
+  This script starts FastAPI for query
   ```cmd 
-  %~dp0./env/python -m streamlit run ui/Search.py --server.runOnSave=true --server.address=127.0.0.1
+  %~dp0./env/python.exe -m uvicorn rest_api.search_rest_gunicorn:app --host 127.0.0.1 --port 7999 --workers 1 
   ```
-
+  This script starts the webserver
+  ```cmd
+    %~dp0./env/python -m streamlit run ui/Search.py --server.runOnSave=true --server.address=127.0.0.1
+  ```
 **Note**: without the ``--server.address=127.0.0.1``, `streamlit`will broadcast your ip address to the world.
 
 ## How to Build From Scratch
