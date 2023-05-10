@@ -39,6 +39,13 @@ def load_query_pipelines():
                                    db_type='dense',
                                    model_cpk="multi-qa-mpnet-base-dot-v1"
                                    )
+    # this one is worse
+    # retriver_dense = load_retriver(db_folder='data/db-faiss',
+    #                                db_name='all-mpnet-base-v2',
+    #                                db_type='dense',
+    #                                model_cpk="all-mpnet-base-v2"
+    #                                )
+    # don't use this one
     # retriver = load_retriver(db_folder='data/db-faiss',
     #                                  db_name='dense-msmarco-distilbert-base-tas-b',
     #                                  db_type='dense',
@@ -49,7 +56,7 @@ def load_query_pipelines():
     # dense search
     querying_dense_pipeline.add_node(component=retriver_dense, name="Retriever", inputs=["Query"])
     querying_dense_pipeline.add_node(component=reader_dense, name="Reader", inputs=["Retriever"])
-    # querying_dense_pipeline.run(query='brand')
+
     # sparse search
     retriver_bm25 = load_retriver(db_folder='data/db-inmemory',
                                   db_name='sparse-bm25plus-length-300',

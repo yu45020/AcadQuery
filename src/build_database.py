@@ -11,7 +11,7 @@ from haystack.document_stores import FAISSDocumentStore, InMemoryDocumentStore
 from haystack.nodes import EmbeddingRetriever
 from haystack.nodes import TextConverter, PreProcessor
 
-txt_files = "data/pdf-plain-text/*.txt"
+txt_files = "data/pdf-plain-text-from-tei/*.txt"
 
 
 def get_meta_from_filename(file):
@@ -41,7 +41,10 @@ def build_db(files_to_index, file_meta,
              model_cpk=None,
              embedding_dim=768,
              similarity='dot_product',
-             duplicate_documents='skip'):
+             duplicate_documents='skip',
+             use_openai=False,
+             openai_key=None
+             ):
     if not os.path.isdir(db_folder):
         os.mkdir(db_folder)
     db_path = f'{db_folder}/{db_name}.db'
@@ -79,7 +82,7 @@ def build_db(files_to_index, file_meta,
 
     doc_pipeline.run(file_paths=files_to_index, meta=file_meta)
 
-    if db_type == 'dense':
+    if db_type == 'dense' and not use_openai:
         retriever = EmbeddingRetriever(
             document_store=document_store,
             embedding_model=model_cpk,
@@ -90,6 +93,16 @@ def build_db(files_to_index, file_meta,
     elif db_type == 'sparse':
         import joblib
         joblib.dump(document_store, db_path + '.pkl')
+    elif db_type == 'dense' and use_openai:
+        retriever = EmbeddingRetriever(
+            document_store=document_store,
+            embedding_model='text-embedding-ada-002',
+            batch_size=8,
+            max_seq_len=8192,
+            api_key=openai_key
+        )
+        document_store.update_embeddings(retriever)
+        document_store.save(index_path=db_index, config_path=db_config)
 
     else:
         raise ValueError
@@ -110,7 +123,7 @@ build_db(files_to_index=files_to_index,
          file_meta=file_meta,
          db_folder='data/db-faiss',
          db_name='dense-msmarco-distilbert-base-tas-b',
-         split_length=65,  # the model is trained on 60 words on avg
+         split_length=100,  # the model is trained on 60 words on avg
          split_overlap=5,
          db_type='dense',
          model_cpk='sentence-transformers/msmarco-distilbert-base-tas-b',
@@ -119,8 +132,38 @@ build_db(files_to_index=files_to_index,
 
 build_db(files_to_index=files_to_index,
          file_meta=file_meta,
+         db_folder='data/db-faiss',
+         db_name='all-mpnet-base-v2',
+         split_length=100,
+         split_overlap=5,
+         db_type='dense',
+         model_cpk="sentence-transformers/all-mpnet-base-v2",
+         embedding_dim=768,
+         similarity='dot_product')
+
+
+build_db(files_to_index=files_to_index,
+         file_meta=file_meta,
          db_folder='data/db-inmemory',
          db_name='sparse-bm25plus-length-300',
          split_length=300,
          split_overlap=10,
          db_type='sparse')
+
+# use openai
+# with open('key', 'r', encoding='utf-8') as f:
+#     open_key = f.read()
+
+# build_db(files_to_index=files_to_index[:3],
+#          file_meta=file_meta,
+#          db_folder='data/db-openai',
+#          db_name='openai',
+#          split_length=100,
+#          split_overlap=5,
+#          db_type='dense',
+#          model_cpk="",
+#          embedding_dim=1536,
+#          similarity='dot_product',
+#          use_openai=True,
+#          openai_key=open_key
+#          )

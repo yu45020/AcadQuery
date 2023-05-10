@@ -25,23 +25,37 @@ def load_retriver(db_folder, db_name, db_type, model_cpk):
             document_store=db_store,
             embedding_model=f"sentence-transformers/{model_cpk}",
             model_format="sentence_transformers",
-            scale_score=True
+            scale_score=True,
+            openai=True
         )
     else:
         raise ValueError
     return retriever
 
 
-retriver_mpnet = load_retriver(db_folder='data/db-faiss',
-                               db_name='dense-multi-qa-mpnet-base-dot-v1',
+retriver_mpnet = load_retriver(db_folder='data/db-openai',
+                               db_name='openai',
                                db_type='dense',
                                model_cpk="multi-qa-mpnet-base-dot-v1"
                                )
-# retriver_msmarco = load_retriver(db_folder='data/db-faiss',
-#                                  db_name='dense-msmarco-distilbert-base-tas-b',
-#                                  db_type='dense',
-#                                  model_cpk="msmarco-distilbert-base-tas-b"
-#                                  )
+
+db_index = f"data/db-openai/openai.faiss"
+db_config = f"data/db-openai/openai.json"
+db_store = FAISSDocumentStore.load(index_path=db_index, config_path=db_config)
+
+
+retriever = EmbeddingRetriever(
+    document_store=db_store,
+    embedding_model='msmarco-distilbert-base-tas-b',
+    model_format="sentence_transformers",
+    scale_score=True,
+)
+
+retriver_msmarco = load_retriver(db_folder='data/db-faiss',
+                                 db_name='dense-msmarco-distilbert-base-tas-b',
+                                 db_type='dense',
+                                 model_cpk="msmarco-distilbert-base-tas-b"
+                                 )
 #
 # retriver_bm25 = load_retriver(db_folder='data/db-inmemory',
 #                               db_name='sparse-bm25plus-length-300',
@@ -52,7 +66,7 @@ retriver_mpnet = load_retriver(db_folder='data/db-faiss',
 reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=False)
 
 querying_pipeline = Pipeline()
-querying_pipeline.add_node(component=retriver_mpnet, name="Retriever", inputs=["Query"])
+querying_pipeline.add_node(component=retriever, name="Retriever", inputs=["Query"])
 querying_pipeline.add_node(component=reader, name="Reader", inputs=["Retriever"])
 
 prediction = querying_pipeline.run(
