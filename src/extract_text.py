@@ -9,7 +9,7 @@ from grobid_client_python.grobid_client.grobid_client import GrobidClient
 
 # start docker
 identify = ["persName", 'head', "ref", "biblStruct", "formula", "s"]
-client = GrobidClient(grobid_server="http://localhost:8070",
+client = GrobidClient(grobid_server="http://localhost:8080",
                       coordinates=identify,
                       sleep_time=10,
                       timeout=600, )
@@ -19,12 +19,12 @@ client = GrobidClient(grobid_server="http://localhost:8070",
 # -------------------------------------
 # loop over folder to avoid hanging
 
-folders = os.listdir('data/pdf')
+folders = os.listdir('data/pdf raw--processed')
 tei_parent_folder = 'data/pdf-extract-tei-xml'
 for folder in tqdm(folders):
     client.process(service='processFulltextDocument',
-                   input_path=f'data/pdf/{folders}',
-                   output=f'{tei_parent_folder}/{folders}',
+                   input_path=f'data/pdf raw--processed/{folder}',
+                   output=f'{tei_parent_folder}/{folder}',
                    n=10,
                    consolidate_header=True,
                    consolidate_citations=True,
@@ -37,7 +37,7 @@ for folder in tqdm(folders):
 #           Convert Tei to Txt
 # -------------------------------------
 
-out_folder = 'data/pdf-plain-text'
+out_folder = 'data/pdf-plain-text-from-tei'
 os.makedirs(out_folder, exist_ok=True)
 
 
@@ -56,7 +56,10 @@ def main(file):
             par_text = ''
             for paragraph in session.contents:
                 if isinstance(paragraph, bs4.element.NavigableString):
-                    par_text += paragraph.get_text() + '\n'
+                    if hasattr(paragraph, 'get_text'):
+                        par_text += paragraph.get_text() + '\n'
+                    else:
+                        par_text += str(paragraph) + '\n'
                 elif isinstance(paragraph, bs4.element.Tag):
                     par_text += ' '.join([i.get_text() for i in paragraph.find_all('s')])
                 else:
@@ -78,6 +81,6 @@ def main(file):
         f.write(out_text)
 
 
-files = glob.glob(f'{tei_parent_folder}/**/*.xml', recursive=True)
+files = glob.glob(f'data/pdf-ectract-tei-xml/**/*.xml', recursive=True)
 for file in tqdm(files):
     main(file)

@@ -9,10 +9,10 @@ import pkg_resources
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-out_folder = 'data-processed/plain-text'
+out_folder = 'data-processed/pdf-plain-text-from-tei'
 os.makedirs(out_folder, exist_ok=True)
-dictionary_path = pkg_resources.resource_filename("symspellpy", "frequency_dictionary_en_82_765.txt")
-bigram_path = pkg_resources.resource_filename("symspellpy", "frequency_bigramdictionary_en_243_342.txt")
+# dictionary_path = pkg_resources.resource_filename("symspellpy", "frequency_dictionary_en_82_765.txt")
+# bigram_path = pkg_resources.resource_filename("symspellpy", "frequency_bigramdictionary_en_243_342.txt")
 
 
 def main(file_path):

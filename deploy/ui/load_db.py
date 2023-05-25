@@ -34,31 +34,44 @@ def load_retriver(db_folder, db_name, db_type, model_cpk=None):
 
 
 def load_query_pipelines():
-    retriver = load_retriver(db_folder='data/db-faiss',
-                             db_name='dense-multi-qa-mpnet-base-dot-v1',
-                             db_type='dense',
-                             model_cpk="multi-qa-mpnet-base-dot-v1"
-                             )
+    retriver_dense = load_retriver(db_folder='data/db-faiss',
+                                   db_name='dense-multi-qa-mpnet-base-dot-v1',
+                                   db_type='dense',
+                                   model_cpk="multi-qa-mpnet-base-dot-v1"
+                                   )
+    # this one is worse
+    # retriver_dense = load_retriver(db_folder='data/db-faiss',
+    #                                db_name='all-mpnet-base-v2',
+    #                                db_type='dense',
+    #                                model_cpk="all-mpnet-base-v2"
+    #                                )
+    # don't use this one
     # retriver = load_retriver(db_folder='data/db-faiss',
     #                                  db_name='dense-msmarco-distilbert-base-tas-b',
     #                                  db_type='dense',
     #                                  model_cpk="msmarco-distilbert-base-tas-b"
     #                                  )
     querying_dense_pipeline = Pipeline()
-    reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2")
+    reader_dense = FARMReader(model_name_or_path="deepset/roberta-base-squad2")
     # dense search
-    querying_dense_pipeline.add_node(component=retriver, name="Retriever", inputs=["Query"])
-    querying_dense_pipeline.add_node(component=reader, name="Reader", inputs=["Retriever"])
+    querying_dense_pipeline.add_node(component=retriver_dense, name="Retriever", inputs=["Query"])
+    querying_dense_pipeline.add_node(component=reader_dense, name="Reader", inputs=["Retriever"])
 
     # sparse search
     retriver_bm25 = load_retriver(db_folder='data/db-inmemory',
                                   db_name='sparse-bm25plus-length-300',
                                   db_type='sparse'
                                   )
+    reader_bm25 = FARMReader(model_name_or_path="deepset/roberta-base-squad2")
+
     ranker_bm25 = SentenceTransformersRanker(model_name_or_path="cross-encoder/ms-marco-MiniLM-L-12-v2")
     querying_sparse_pipeline = Pipeline()
     querying_sparse_pipeline.add_node(component=retriver_bm25, name="Retriever-bm25", inputs=["Query"])
     querying_sparse_pipeline.add_node(component=ranker_bm25, name="Retriever", inputs=["Retriever-bm25"])
-    querying_sparse_pipeline.add_node(component=reader, name="Reader", inputs=["Retriever"])
+    querying_sparse_pipeline.add_node(component=reader_bm25, name="Reader", inputs=["Retriever"])
+    # querying_sparse_pipeline.run(query='brand', params={
+    #     "Retriever": {'top_k': 3},
+    #     "Reader": {"top_k": 3}
+    # })
     return {'dense': querying_dense_pipeline,
             'sparse': querying_sparse_pipeline}
