@@ -68,7 +68,7 @@ def main():
     reader_top_k = st.sidebar.slider(
         "Max. number of answers",
         min_value=1,
-        max_value=5,
+        max_value=15,
         value=DEFAULT_NUMBER_OF_ANSWERS,
         step=1,
         on_change=reset_results,
@@ -76,7 +76,7 @@ def main():
     retriever_top_k = st.sidebar.slider(
         "Max. number of documents from retriever",
         min_value=1,
-        max_value=5,
+        max_value=15,
         value=DEFAULT_DOCS_FROM_RETRIEVER,
         step=1,
         on_change=reset_results,
@@ -145,7 +145,7 @@ def main():
                 result_tab.markdown(f"**Document:** {source} \n")
                 result_tab.markdown(f"**Relevance:** {relevance}")
                 result_tab.write(
-                    markdown(context[:start_idx] + str(annotation(answer, "(ANSWER)", "#edff87", "#080001")) + context[
+                    markdown(context[:start_idx] + str(annotation(answer, "", "#edff87", "#080001")) + context[
                                                                                                                end_idx:]),
                     unsafe_allow_html=True,
                 )
@@ -167,7 +167,6 @@ def main():
                     f"🧠 &nbsp;&nbsp; Searching documents... \n "
             ):
                 try:
-
                     st.session_state.results_dense, st.session_state.raw_json_dense = query(
                         question,
                         search_type='dense',
@@ -186,6 +185,7 @@ def main():
                         st.error("🧑‍🌾 &nbsp;&nbsp; All our workers are busy! Try again later.")
                     else:
                         st.error("🐞 &nbsp;&nbsp; An error occurred during the request.")
+                        print(e)
                         return
 
         with sparse_result_tab:
@@ -214,14 +214,14 @@ def main():
                         st.error("🐞 &nbsp;&nbsp; An error occurred during the request.")
                         return
         st.session_state.last_question = question
+    else:
+        if st.session_state.results_dense:
+            write_query_result(dense_result_tab, st.session_state.results_dense,
+                               st.session_state.raw_json_dense)
 
-    if st.session_state.results_dense:
-        write_query_result(dense_result_tab, st.session_state.results_dense,
-                           st.session_state.raw_json_dense)
-
-    if st.session_state.results_sparse:
-        write_query_result(sparse_result_tab, st.session_state.results_sparse,
-                           st.session_state.raw_json_sparse)
+        if st.session_state.results_sparse:
+            write_query_result(sparse_result_tab, st.session_state.results_sparse,
+                               st.session_state.raw_json_sparse)
     last_query.write(f"Last Query: {st.session_state.last_question}")
 
 

@@ -11,7 +11,7 @@ from haystack.document_stores import FAISSDocumentStore, InMemoryDocumentStore
 from haystack.nodes import EmbeddingRetriever
 from haystack.nodes import TextConverter, PreProcessor
 
-txt_files = "data/pdf-plain-text-from-tei/*.txt"
+txt_files = "data/pdf/**/*.txt"
 
 
 def get_meta_from_filename(file):
@@ -140,7 +140,6 @@ build_db(files_to_index=files_to_index,
          model_cpk="sentence-transformers/all-mpnet-base-v2",
          embedding_dim=768,
          similarity='dot_product')
-
 
 build_db(files_to_index=files_to_index,
          file_meta=file_meta,

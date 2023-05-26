@@ -69,9 +69,6 @@ def load_query_pipelines():
     querying_sparse_pipeline.add_node(component=retriver_bm25, name="Retriever-bm25", inputs=["Query"])
     querying_sparse_pipeline.add_node(component=ranker_bm25, name="Retriever", inputs=["Retriever-bm25"])
     querying_sparse_pipeline.add_node(component=reader_bm25, name="Reader", inputs=["Retriever"])
-    # querying_sparse_pipeline.run(query='brand', params={
-    #     "Retriever": {'top_k': 3},
-    #     "Reader": {"top_k": 3}
-    # })
+
     return {'dense': querying_dense_pipeline,
             'sparse': querying_sparse_pipeline}
