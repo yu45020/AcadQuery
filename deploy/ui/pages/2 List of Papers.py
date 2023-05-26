@@ -9,7 +9,7 @@ def set_state_if_absent(key, value):
 
 
 set_state_if_absent("content_page_2", None)
-if True:  # st.session_state.content_page_2 is None:
+if st.session_state.content_page_2 is None:
     with open(md_file, 'r', encoding='utf-8') as f:
         st.session_state.content_page_2 = f.read()
 
