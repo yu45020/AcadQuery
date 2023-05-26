@@ -6,21 +6,27 @@
 Academic Paper Semantic Search is a localized search engine, providing plain text search on a collection of pdf papers.
 Search methods include neural network based search (BERT based) and simple dictionary based matching (`BM25`).
 
-It requires Human Intelligence on top of Artificial Intelligence, so it will not be a local ``ChatGPT``. 
+It requires Human Intelligence on top of Artificial Intelligence, so it will not be a local ``ChatGPT``.
 
-The current version is designed to run in laptops without GPU, so large neural network models are not used. But this program modularizes the search algorithm, so  you can easily swap the state of art models. Lite versions are strongly recommended.
+The current version is designed to run in laptops without GPU, so large neural network models are not used. But this
+program modularizes the search algorithm, so you can easily swap the state of art models. Lite versions are strongly
+recommended.
 
-If you are interested in fine-tuning large models with limited GPU, I strongly recommend one of the BOOM paper below (or the first figure). Training a model with 100+ Billion parameters requires a different skill set.  It's easy to torture one Nvidia 2080 Ti for a year, but it is not enough.
+If you are interested in fine-tuning large models with limited GPU, I strongly recommend one of the BOOM paper below (or
+the first figure). Training a model with 100+ Billion parameters requires a different skill set. It's easy to torture
+one Nvidia 2080 Ti for a year, but it is not enough.
 
-  * [The BigScience Architecture & Scaling Group(2022) *What Language Model to Train if You Have One Million GPU Hours?*](https://arxiv.org/abs/2210.15424)
+* [The BigScience Architecture & Scaling Group(2022) *What Language Model to Train if You Have One Million GPU
+  Hours?*](https://arxiv.org/abs/2210.15424)
 
-
-# Architecture 
+# Architecture
 
 ![img](imgs/architecture.png)
 
 ## How To Start Web Server
+
 1. Create virtual environment. Recommend using ``mamba`` rather than `conda` to install packages
+
   ```cmd
   conda create -p env/  python=3.9 
   conda activate env/
@@ -29,29 +35,37 @@ If you are interested in fine-tuning large models with limited GPU, I strongly r
   ```
 
 2. You may want the GPU version if possible
+
   ```cmd
   conda activate env/
   pip install farm-haystack[only-faiss-gpu] transformers[torch]
   ```
-  Windows users may have trouble installing the `faiss-gpu` in the `farm-haystack`. An alternative is 
+
+Windows users may have trouble installing the `faiss-gpu` in the `farm-haystack`. An alternative is
+
   ```cmd 
   conda activate env/
   conda install -c conda-forge faiss-gpu
   ```
 
 1. Copy `data/db-*` folders to `data/` and run
+
   ```cmd  
   ../env/python -m streamlit run ui/Search.py --server.runOnSave=true --server.address=127.0.0.1
   ``` 
- 
-  This script starts FastAPI for query
+
+This script starts FastAPI for query
+
   ```cmd 
   %~dp0./env/python.exe -m uvicorn rest_api.search_rest_gunicorn:app --host 127.0.0.1 --port 7999 --workers 1 
   ```
-  This script starts the webserver
+
+This script starts the webserver
+
   ```cmd
     %~dp0./env/python -m streamlit run ui/Search.py --server.runOnSave=true --server.address=127.0.0.1
   ```
+
 **Note**: without the ``--server.address=127.0.0.1``, `streamlit`will broadcast your ip address to the world.
 
 ## How to Build From Scratch
@@ -67,7 +81,14 @@ If you are interested in fine-tuning large models with limited GPU, I strongly r
 * Select all pdf and right click, management attachments, sent to tablet
 * Use `Adobe Pro` or `Abbyy` for batch text recognition
 
-### Extract Plain Text
+### Extract Plain Text (Better Way)
+
+* Use Adobe Pro to recognize and export pdf to word document
+* use Pandoc to convert to plain text:
+
+   ``pandoc -f docx -i file_name.docx -t plain -o file_name.txt``
+
+### Extract Plain Text (Old Way)
 
 Use virtual environment to manage python packages. Many of them may have conflict with your current packages.
 
@@ -78,12 +99,13 @@ Use virtual environment to manage python packages. Many of them may have conflic
 * May need spell check
 
 ### Build Database
+
 * Recommend  ``mamba`` to install packages
 * Install [haystack](https://github.com/deepset-ai/haystack) python package or docker image
     * need to install faiss; given the small number of documents, the cpu version is fast enough
     * if possible, recommend `` mamba install -c conda-forge libfaiss-avx2 ``
     * if want to embed documents, need `transformer[torch]` package
-*  `git clone https://github.com/kermitt2/grobid_client_python`
+* `git clone https://github.com/kermitt2/grobid_client_python`
 * run `src/build_database.py`
 * Simple dictionary search use [BM25](https://docs.haystack.deepset.ai/docs/retriever#bm25-recommended) and In Memory
   database.
@@ -105,13 +127,14 @@ Use virtual environment to manage python packages. Many of them may have conflic
 
 ### Build FAISS From Source
 
-Windows users who have Intel cpu and want faster matching speed may want to compile the `avx2` version from source. You can 
+Windows users who have Intel cpu and want faster matching speed may want to compile the `avx2` version from source. You
+can
 link the MKL library for faster speed.
 
 * Install  `visual studio 2019`  (desktop development with C++), `cuda toolkit`, `Intel OneAPI toolkit`,
   and `swig`
 * Use conda env to activate desired python version
-* Download the latest `faiss` release. 
+* Download the latest `faiss` release.
 * Assume install with default settings, in ``cmd``, activate environment variables
 
   ```cmd

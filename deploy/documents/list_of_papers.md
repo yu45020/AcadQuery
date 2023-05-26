@@ -1,12 +1,14 @@
 
 <div id="contents" style="position:fixed;width: 350px;right:0;top:100"> 
 
- - [Additional Reading List (143)](#additional-reading-list)
- - [Consumer Behavior I (69)](#consumer-behavior-i)
- - [Consumer Behavior II (62)](#consumer-behavior-ii)
- - [Empirical Models in Marketing (44)](#empirical-models-in-marketing)
- - [Marketing Decisions and Methods (151)](#marketing-decisions-and-methods)
- - [Math Models in Marketing (28)](#math-models-in-marketing) 
+ - [Additional Reading List (145)](#additional-reading-list)
+ - [Analytical Models in Marketing (73)](#analytical-models-in-marketing)
+ - [Consumer Behavior I (108)](#consumer-behavior-i)
+ - [Consumer Behavior II (70)](#consumer-behavior-ii)
+ - [Empirical Models in Marketing (56)](#empirical-models-in-marketing)
+ - [Judgment and Decision Making (19)](#judgment-and-decision-making)
+ - [Marketing Decisions and Methods (185)](#marketing-decisions-and-methods)
+ - [Math Models in Marketing (31)](#math-models-in-marketing) 
 
 </div>
 <style>
@@ -60,8 +62,6 @@
 
 * `[Chintagunta](2017) Structural Models In Marketing` 
 
-* `[Coleman Et Al](2019) Retracted` 
-
 * `[Dalton_Spiller](2012) Too Much Of A Good Thing` 
 
 * `[De Houwer Et Al](2001) Association Learning Of Likes And Dislikes` 
@@ -76,13 +76,15 @@
 
 * `[Erdem_Keane](1996) Decision-Making Under Uncertainty` 
 
-* `[Escalas_Bettman](2005) Self‐Construal, Reference Groups, And Brand Meaning` 
+* `[Escalas_Bettman](2005) Self-Construal, Reference Groups, And Brand Meaning` 
 
 * `[Fader Et Al](2005) Rfm And Clv` 
 
 * `[Fader Et Al](2010) Customer-Base Analysis In A Discrete-Time Noncontractual Setting` 
 
 * `[Fernandes Et Al](2014) Financial Literacy, Financial Education, And Downstream Financial Behaviors` 
+
+* `[Frederick Et Al](2014) The Limits Of Attraction` 
 
 * `[Friestad_Wright](1994) The Persuasion Knowledge Model` 
 
@@ -130,7 +132,7 @@
 
 * `[Iyengar_Lepper](2000) When Choice Is Demotivating` 
 
-* `[Iyer Et Al](2005) The Targeting Of Advertising` 
+* `[Iyer Et Al.](2005) The Targeting Of Advertising` 
 
 * `[Jerath Et Al](2011) A “Position Paradox” In Sponsored Search Auctions` 
 
@@ -160,9 +162,9 @@
 
 * `[Kuksov_Villas-Boas](2010) When More Alternatives Lead To Less Choice` 
 
-* `[Lal_Sarvary](1999) When And How Is The Internet Likely To Decrease Price Competition` 
+* `[Kunda](1990) The Case For Motivated Reasoning` 
 
-* `[Lee_Labroo](2004) The Effect Of Conceptual And Perceptual Fluency On Brand Evaluation` 
+* `[Lal_Sarvary](1999) When And How Is The Internet Likely To Decrease Price Competition` 
 
 * `[Liberman_Trope](1998) The Role Of Feasibility And Desirability Considerations In Near And Distant` 
 
@@ -222,6 +224,8 @@
 
 * `[Raju Et Al](1990) The Effects Of Brand Loyalty On Competitive Price Promotional Strategies` 
 
+* `[Reber Et Al](1998) Effects Of Perceptual Fluency On Affective Judgments` 
+
 * `[Roediger](1990) Implicit Memory` 
 
 * `[Rossi Et Al](1996) The Value Of Purchase History Data In Target Marketing` 
@@ -232,7 +236,7 @@
 
 * `[Rutz_Bucklin](2011) From Generic To Branded` 
 
-* `[Schacter](1999) Insights From Psychology And Cognitive Neuroscience` 
+* `[Schacter](1999) The Seven Sins Of Memory` 
 
 * `[Schwartz](1994) Are There Universal Aspects In The Structure And Contents Of Human Values` 
 
@@ -266,6 +270,8 @@
 
 * `[Thaler](1985) Mental Accounting And Consumer Choice` 
 
+* `[Tversky And Koehler](1994) Support Theory A Nonextensional Representation Of ` 
+
 * `[Tversky](1972) Elimination By Aspects` 
 
 * `[Tversky_Kahneman](1974) Judgment Under Uncertainty` 
@@ -278,13 +284,13 @@
 
 * `[Tversky_Kahneman](1992) Advances In Prospect Theory` 
 
-* `[Tversky_Koehler]() Support Theory` 
-
 * `[Van Den Bulte_Wuyts](2007) Social Networks And Marketing` 
 
 * `[Varian](1980) A Model Of Sales` 
 
 * `[Watts_Dodds](2007) Influentials, Networks, And Public Opinion Formation` 
+
+* `[Weiss_Johar](2018) Psychological Ownership In Egocentric Categorization Theory` 
 
 * `[Wernerfelt](1988) Umbrella Branding As A Signal Of New Product Quality` 
 
@@ -304,14 +310,179 @@
 
 * `[De Langhe Et Al](2016) Navigating By The Stars` 
 
+## Analytical Models in Marketing 
+* `[Abhishek Et Al](2016) Agency Selling Or Reselling` 
+
+* `[Adams_Yellen](1976) Commodity Bundling And The Burden Of Monopoly` 
+
+* `[Amaldoss Et Al](2016) Keyword Management Costs And “Broad Match” In Sponsored Search Advertising` 
+
+* `[Amaldoss_Jain](2008) Trading Up` 
+
+* `[Anand Et Al](2011) Quality–Speed Conundrum` 
+
+* `[Balasubramanian](1998) Mail Versus Mall` 
+
+* `[Basu Et Al](1985) Salesforce Compensation Plans` 
+
+* `[Berman_Katona](2013) The Role Of Search Engine Optimization In Search Marketing` 
+
+* `[Bernstein_Federgruen](2004) A General Equilibrium Model For Industries With Price And Service Competition` 
+
+* `[Chen Et Al](2001) Individual Marketing With Imperfect Targetability` 
+
+* `[Chen Et Al](2009) A Theory Of Combative Advertising` 
+
+* `[Choi Et Al.](2023) Predictive Analytics And Ship-Then-Shop Subscripti ` 
+
+* `[Chu](1992) Demand Signalling And Screening In Channels Of Distribution` 
+
+* `[Dai_Jerath](2013) Salesforce Compensation With Inventory Considerations` 
+
+* `[Desai Et Al](2007) Research Note—The Role Of Production Lead Time And Demand Uncertainty In` 
+
+* `[Dixit_Norman](1978) Advertising And Welfare` 
+
+* `[Edelman Et Al](2007) Internet Advertising And The Generalized Second-Price Auction` 
+
+* `[Goić Et Al](2011) Cross-Market Discounts-1` 
+
+* `[Goić Et Al](2011) Cross-Market Discounts` 
+
+* `[Haitao Cui Et Al](2007) Fairness And Channel Coordination` 
+
+* `[Hotelling](1929) Stability In Competition` 
+
+* `[Israeli Et Al](2016) Minimum Advertised Pricing` 
+
+* `[Israeli](2018) Online Map Enforcement` 
+
+* `[Iyer Et Al](2005) The Targeting Of Advertising` 
+
+* `[Iyer_Villas-Boas](2003) A Bargaining Theory Of Distribution Channels` 
+
+* `[Jerath And Ren](2021) Consumer Rational (In)Attention To Favorable And U ` 
+
+* `[Jerath Et Al](2010) Revenue Management With Strategic Customers` 
+
+* `[Jerath Et Al](2017) Product Quality In A Distribution Channel With Inventory Risk` 
+
+* `[Jerath_Zhang](2010) Store Within A Store` 
+
+* `[Jiang Et Al](2011) Firm Strategies In The “Mid Tail” Of Platform-Based Retailing` 
+
+* `[Jiang_Tian](2018) Collaborative Consumption` 
+
+* `[Johnson](2013) Targeted Advertising And Advertising Avoidance` 
+
+* `[Johnson](2017) The Agency Model And Mfn Clauses` 
+
+* `[Kihlstrom_Riordan](1984) Advertising As A Signal` 
+
+* `[Krishnan_Winter](2007) Vertical Control Of Price And Inventory` 
+
+* `[Kuksov](2004) Buyer Search Costs And Endogenous Product Design` 
+
+* `[Kuksov_Villas-Boas](2010) When More Alternatives Lead To Less Choice` 
+
+* `[Kuksov_Xie](2012) Competition In A Status Goods Market` 
+
+* `[Lal](1990) Price Promotions` 
+
+* `[Lal_Sarvary](1999) When And How Is The Internet Likely To Decrease Price Competition` 
+
+* `[Lal_Staelin](1986) Salesforce Compensation Plans In Environments With Asymmetric Information` 
+
+* `[Lester](2011) Information And Prices With Capacity Constraints` 
+
+* `[Long Et Al](2022) Designing An Online Retail Marketplace-1` 
+
+* `[Long Et Al](2022) Designing An Online Retail Marketplace` 
+
+* `[Mayzlin_Shin](2011) Uninformative Advertising As An Invitation To Search-1` 
+
+* `[Mayzlin_Shin](2011) Uninformative Advertising As An Invitation To Search` 
+
+* `[Mayzlin_Yoganarasimhan](2012) Link To Success` 
+
+* `[Mcguire_Staelin](2008) An Industry Equilibrium Analysis Of Downstream Vertical Integration` 
+
+* `[Moorthy](1984) Market Segmentation, Self-Selection, And Product Line Design` 
+
+* `[Moorthy](1985) Using Game Theory To Model Competition` 
+
+* `[Moorthy](1987) Comment—Managing Channel Profits` 
+
+* `[Moorthy_Srinivasan](1995) Signaling Quality With A Money-Back Guarantee` 
+
+* `[Mussa_Rosen](1978) Monopoly And Product Quality` 
+
+* `[Nelson](1974) Advertising As Information` 
+
+* `[Netessine_Taylor](2007) Product Line Design And Production Technology` 
+
+* `[Raju Et Al](1990) The Effects Of Brand Loyalty On Competitive Price Promotional Strategies` 
+
+* `[Raju_Srinivasan](1996) Quota-Based Compensation Plans For Multiterritory Heterogeneous Salesforces` 
+
+* `[Salop](1979) Monopolistic Competition With Outside Goods` 
+
+* `[Sayedi Et Al](2014) Competitive Poaching In Sponsored Search Advertising And Its Strategic Impact` 
+
+* `[Sayman Et Al](2002) Positioning Of Store Brands` 
+
+* `[Shin](2007) How Does Free Riding On Customer Service Affect Competition` 
+
+* `[Simester_Zhang](2010) Why Are Bad Products So Hard To Kill` 
+
+* `[Subramanian Et Al](2014) The Strategic Value Of High-Cost Customers` 
+
+* `[Varian](1980) A Model Of Sales` 
+
+* `[Villas-Boas](1993) Predicting Advertising Pulsing Policies In An Oligopoly` 
+
+* `[Villas-Boas](1998) Product Line Design For A Distribution Channel` 
+
+* `[Wang](2017) Advertising As A Search Deterrent` 
+
+* `[Wernerfelt](1988) Umbrella Branding As A Signal Of New Product Quality` 
+
+* `[Wu_Cosguner](2020) Profiting From The Decoy Effect` 
+
+* `[Xie_Shugan](2001) Electronic Tickets, Smart Cards, And Online Prepayments` 
+
+* `[Yildirim Et Al](2013) User-Generated Content And Bias In News Media` 
+
+* `[D'Aspremont Et Al](1979) On Hotelling'S Stability In Competition` 
+
+* `[De Corniere_Nijs](2012) Online Advertising And Privacy` 
+
 ## Consumer Behavior I 
+* `1297411 Gpr Digital English Singles Rgb Fnl11` 
+
+* `Buy Now Pay Later Experimental Research Public Report` 
+
 * `[Aczel Et Al](2020) A Consensus-Based Transparency Checklist` 
+
+* `[Bago Et Al](2020) Fake News, Fast And Slow-1` 
+
+* `[Bago Et Al](2020) Fake News, Fast And Slow-2` 
 
 * `[Bago Et Al](2020) Fake News, Fast And Slow` 
 
+* `[Barboza](2018) I Will Pay Tomorrow, Or Maybe The Day After` 
+
+* `[Bauer Et Al](2021) Interest-Free Financing Promotions Increase Consumers’ Demand For Credit For-1` 
+
+* `[Bauer Et Al](2021) Interest-Free Financing Promotions Increase Consumers’ Demand For Credit For` 
+
+* `[Berman Et Al](2016) Expense Neglect In Forecasting Personal Finances-1` 
+
 * `[Berman Et Al](2016) Expense Neglect In Forecasting Personal Finances` 
 
-* `[Brucks_Levav](2022) Virtual Communication Curbs Creative Idea Generation` 
+* `[Broihanne Et Al](2008) Solving Some Financial Puzzles With Prospect Theory And Mental Accounting` 
+
+* `[Brucks_Levav]() Title` 
 
 * `[Camerer Et Al](2018) Evaluating The Replicability Of Social Science Experiments In Nature And` 
 
@@ -323,7 +494,17 @@
 
 * `[Ericson_Laibson](2019) Intertemporal Choice Cp 1` 
 
+* `[Farber](2008) Reference-Dependent Preferences And Labor Supply` 
+
+* `[Farber](2015) Why You Can’T Find A Taxi In The Rain And Other Labor Supply Lessons From Cab` 
+
 * `[Fei_Bartels](2022) Consumers’ Mental Representation Of Expenditures` 
+
+* `[Fernandes Et Al](2014) Financial Literacy, Financial Education, And Downstream Financial Behaviors-1` 
+
+* `[Fernandes Et Al](2014) Financial Literacy, Financial Education, And Downstream Financial Behaviors-2` 
+
+* `[Fernandes Et Al](2014) Financial Literacy, Financial Education, And Downstream Financial Behaviors-3` 
 
 * `[Fernandes Et Al](2014) Financial Literacy, Financial Education, And Downstream Financial Behaviors` 
 
@@ -331,7 +512,19 @@
 
 * `[Frederick Et Al](2014) The Limits Of Attraction` 
 
+* `[Frederick](2005) Cognitive Reflection And Decision Making` 
+
+* `[Frederick_Loewenstein](2002) Time Discounting And Time Preference` 
+
+* `[Gal_Rucker](2018) Loss Aversion, Intellectual Inertia, And A Call For A More Contrarian Science` 
+
 * `[Gal_Rucker](2018) The Loss Of Loss Aversion` 
+
+* `[Galiani Et Al](2020) Trust And Saving In Financial Institutions` 
+
+* `[Gans](2019) The Specialness Of Zero` 
+
+* `[Gathergood Et Al](2019) How Do Individuals Repay Their Debt-1` 
 
 * `[Gathergood Et Al](2019) How Do Individuals Repay Their Debt` 
 
@@ -339,21 +532,27 @@
 
 * `[Gilbert Et Al](2004) Looking Forward To Looking Backward` 
 
+* `[Gintis]() Cooperation, Reciprocity And Punishment In Fifteen Small-Scale Societies` 
+
 * `[Goldstein Et Al](2008) Choosing Outcomes Versus Choosing Products` 
 
 * `[Goodman Et Al](2019) The Material-Experiential Asymmetry In Discounting` 
 
 * `[Gourville](1998) Pennies‐A‐Day` 
 
-* `[Gray Et Al](2019) “Forward Flow”` 
+* `[Gray Et Al]() “Forward Flow”` 
+
+* `[Hadar Et Al](2021) Choice Bracketing And Experience-Based Choice` 
+
+* `[Handel](2013) Adverse Selection And Inertia In Health Insurance Markets` 
 
 * `[Hardie Et Al](1993) Modeling Loss Aversion And Reference Dependence Effects On Brand Choice` 
 
 * `[Harvey](1997) Confidence In Judgment` 
 
-* `[Henrich Et Al](2001) Cooperation, Reciprocity And Punishment In Fifteen Small-Scale Societies` 
-
 * `[Ho Et Al](2006) Modeling The Psychology Of Consumer And Firm Behavior With Behavioral Economics` 
+
+* `[Ho Et Al](2021) A Bayesian Level-K Model In N-Person Games` 
 
 * `[Huber Et Al](1982) Adding Asymmetrically Dominated Alternatives` 
 
@@ -365,7 +564,15 @@
 
 * `[Johnson Et Al](2013) Can Consumers Make Affordable Care Affordable` 
 
+* `[Johnson Et Al](2019) What’S The Catch-1` 
+
+* `[Johnson Et Al](2019) What’S The Catch-2` 
+
+* `[Johnson Et Al](2019) What’S The Catch-3` 
+
 * `[Johnson Et Al](2019) What’S The Catch` 
+
+* `[Johnson Et Al](2021) Analyzing The Impacts Of Financial Services Regulation To Make The Case That` 
 
 * `[Johnson_Goldstein](2003) Do Defaults Save Lives` 
 
@@ -381,13 +588,27 @@
 
 * `[Kahneman_Tversky](1979) Prospect Theory` 
 
+* `[Koch_Nafziger](2009) Motivational Goal Bracketing` 
+
+* `[Koch_Nafziger](2016) Goals And Bracketing Under Mental Accounting` 
+
+* `[Koch_Nafziger](2020) Motivational Goal Bracketing` 
+
+* `[Koch_Nafziger](2021) Motivational Goal Bracketing With Non-Rational Goals` 
+
 * `[Kunda](1990) The Case For Motivated Reasoning` 
 
 * `[Larrick_Soll](2008) The Mpg Illusion` 
 
 * `[Lusardi_Tufano](2009) Debt Literacy, Financial Experiences, And Overindebtedness` 
 
+* `[Lusardi_Tufano](2015) Debt Literacy, Financial Experiences, And Overindebtedness` 
+
 * `[Macinnis Et Al](2020) Creating Boundary-Breaking, Marketing-Relevant Consumer Research` 
+
+* `[Mann](2013) Assessing The Optimism Of Payday Loan Borrowers` 
+
+* `[Martin](2017) When To Quit` 
 
 * `[Meyvis Et Al](2010) Why Don'T We Learn To Accurately Forecast Feelings` 
 
@@ -407,6 +628,8 @@
 
 * `[Sanfey](2007) Social Decision-Making` 
 
+* `[Schwaiger Et Al](2020) Determinants Of Investor Expectations And Satisfaction` 
+
 * `[Sellier Et Al](2019) Debiasing Training Improves Decision Making In The Field` 
 
 * `[Shu Et Al](2016) Consumer Preferences For Annuity Attributes` 
@@ -415,6 +638,8 @@
 
 * `[Simonsohn Et Al](2014) P-Curve` 
 
+* `[Simonsohn_Gino](2013) Daily Horizons` 
+
 * `[Simonson](1990) The Effect Of Purchase Quantity And Timing On Variety-Seeking Behavior` 
 
 * `[Stanley Et Al](2022) The Cognitive Processes Underlying False Beliefs` 
@@ -422,6 +647,8 @@
 * `[Tversky_Kahneman](1992) Advances In Prospect Theory` 
 
 * `[Thaler](1999) Mental Accounting Matters` 
+
+* `[Tiezzi_Xiao](2016) Time Delay, Complexity And Support For Taxation` 
 
 * `[Tom Et Al](2007) The Neural Basis Of Loss Aversion In Decision-Making Under Risk` 
 
@@ -439,12 +666,20 @@
 
 * `[Weber_Johnson](2011) Query Theory` 
 
+* `[Werthschulte](2020) ‘Pay-Later’ Vs` 
+
 * `[Wilson_Gilbert](2003) Affective Forecasting` 
 
 * `[Wilson_Schooler](1991) Thinking Too Much` 
 
+* `[Xiao_Porto](2019) Present Bias And Financial Behavior` 
+
 ## Consumer Behavior II 
+* `Maslow (1957) Motivation And Personality - Chapters 1 & 2` 
+
 * `[Aaker](1997) Dimensions Of Brand Personality` 
+
+* `[Aggarwal](2004) The Effects Of Brand Relationship Norms On Consumer Attitudes And Behavior` 
 
 * `[Alba_Hutchinson](1987) Dimensions Of Consumer Expertise` 
 
@@ -456,9 +691,11 @@
 
 * `[Bellezza Et Al](2014) The Red Sneakers Effect` 
 
-* `[Bem](2004) Writing The Empirical Journal Article` 
+* `[Bem]() Writing The Empirical Journal Article` 
 
 * `[Berger_Heath](2007) Where Consumers Diverge From Others` 
+
+* `[Brakus Et Al](2009) Brand Experience-1` 
 
 * `[Brakus Et Al](2009) Brand Experience` 
 
@@ -469,6 +706,8 @@
 * `[Davis](1971) That'S Interesting` 
 
 * `[Dunn_Weidman](2015) Building A Science Of Spending` 
+
+* `[Franco](2022) The Consumer Culture Theory (Cct) Research Tradition And Digital Marketing` 
 
 * `[Gilovich Et Al](2015) A Wonderful Life` 
 
@@ -485,6 +724,8 @@
 * `[Hong Et Al](2000) Multicultural Minds` 
 
 * `[Howard_Sheth](1969) The Theory Of Buyer Behavior` 
+
+* `[Hoyer Et Al](2013) Consumer Behavior-1` 
 
 * `[Hoyer Et Al](2013) Consumer Behavior` 
 
@@ -532,6 +773,8 @@
 
 * `[Pham](2007) Emotion And Rationality` 
 
+* `[Pham](2013) The Seven Sins Of Consumer Psychology-1` 
+
 * `[Pham](2013) The Seven Sins Of Consumer Psychology` 
 
 * `[Pham_Higgins](2004) Promotion And Prevention In Consumer Decision Making` 
@@ -546,9 +789,15 @@
 
 * `[Schmitt](2019) From Atoms To Bits And Back` 
 
-* `[Schwarz_Clore](1983) Mood, Misattribution, And Judgments Of Well-Being` 
+* `[Schmitt_Zarantonello](2013) Consumer Experience And Experiential Marketing` 
+
+* `[Schwarz_Clore]() Mood, Misattribution, And Judgments Of Weil-Being` 
+
+* `[Seregina_Weijo](2017) Play At Any Cost` 
 
 * `[Shiv_Fedorikhin](1999) Heart And Mind In Conflict` 
+
+* `[Simonson Et Al](2001) Consumer Research` 
 
 * `[Stephen](2016) The Role Of Digital And Social Media Marketing In Consumer Behavior` 
 
@@ -564,12 +813,22 @@
 
 * `[Zauberman Et Al](2009) Memories As Assets` 
 
-* `[]() Maslow (1957) Motivation And Personality - Chapters 1 & 2` 
-
 * `[Van Laer Et Al](2018) What Happens In Vegas Stays On Tripadvisor` 
 
 ## Empirical Models in Marketing 
+* `[Aeberhardt_Davezies]() Implementation Of A Conditional Logit Model With State Dependence Using` 
+
 * `[Anderson_Simester](2004) Long-Run Effects Of Promotion Depth On New Versus Established Customers` 
+
+* `[Bartolucci Et Al](2018) Testing For State Dependence In Binary Panel Data With Individual Covariates By` 
+
+* `[Bartolucci_Farcomeni](2009) A Multivariate Extension Of The Dynamic Logit Model For Longitudinal Data Based` 
+
+* `[Bartolucci_Nigro](2007) Approximate Conditional Inference For Panel Logit Models Allowing For State` 
+
+* `[Bartolucci_Nigro](2012) Pseudo Conditional Maximum Likelihood Estimation Of The Dynamic Logit Model For` 
+
+* `[Bartolucci_Pigini](2017) Cquad` 
 
 * `[Berger Et Al](2020) Uniting The Tribes` 
 
@@ -581,11 +840,13 @@
 
 * `[Bucklin_Lattin](1991) A Two-State Model Of Purchase Incidence And Brand Choice` 
 
+* `[Carro](2007) Estimating Dynamic Panel Data Discrete Choice Models With Fixed Effects` 
+
 * `[Dew Et Al](2022) Letting Logos Speak` 
 
 * `[Dew_Ansari](2018) Bayesian Nonparametric Customer Base Analysis With Model-Based Visualizations` 
 
-* `[Donnelly Et Al](2021) Counterfactual Inference For Consumer Choice Across Many Product Categories` 
+* `[Donnelly Et Al](2019) Counterfactual Inference For Consumer Choice Across Many Product Categories` 
 
 * `[Du_Kamakura](2012) Quantitative Trendspotting` 
 
@@ -603,15 +864,13 @@
 
 * `[Guadagni_Little](2008) A Logit Model Of Brand Choice Calibrated On Scanner Data` 
 
-* `[Gupta](1988) Impact Of Sales Promotions On When, What, And How Much To Buy` 
-
 * `[Hartmann Et Al](2021) The Power Of Brand Selfies` 
+
+* `[Honore_Kyriazidou](2000) Panel Data Discrete Choice Models With Lagged Dependent Variables` 
 
 * `[Hutchinson Et Al](2000) Unobserved Heterogeneity As An Alternative Explanation For “Reversal” Effects` 
 
 * `[Kamakura_Russell](1989) A Probabilistic Choice Model For Market Segmentation And Elasticity Structure` 
-
-* `[Keane](1997) Modeling Heterogeneity And State Dependence In Consumer Choice Behavior` 
 
 * `[Lafferty Et Al](2001) Conditional Random Fields` 
 
@@ -623,7 +882,7 @@
 
 * `[Manski](1993) Identification Of Endogenous Social Effects` 
 
-* `[Manski](1993) Identification Of Endogenous Social Effects2` 
+* `[Mccormick Et Al](2012) Dynamic Logistic Regression And Dynamic Model Averaging For Binary` 
 
 * `[Misra_Nair](2011) A Structural Model Of Sales-Force Compensation Dynamics` 
 
@@ -641,7 +900,13 @@
 
 * `[Ruiz Et Al](2020) Shopper` 
 
+* `[Ryski]() Twenty Tips For Interpreting Scientific Claims` 
+
+* `[Savage_Yeh]() Tips From A Pulitzer Prizewinner` 
+
 * `[Simester](2017) Field Experiments In Marketing` 
+
+* `[Simonov Et Al](2020) State-Dependent Demand Estimation With Initial Conditions Correction` 
 
 * `[Simonov_Rao](2022) Demand For Online News Under Government Control` 
 
@@ -656,6 +921,51 @@
 * `[Wedel Et Al](1999) Discrete And Continuous Representations Of Unobserved Heterogeneity In Choice` 
 
 * `[Zervas Et Al](2017) The Rise Of The Sharing Economy` 
+
+* `[](1997) Modeling Heterogeneity And State Dependence In Consumer Choice Behavior` 
+
+* `[](1998) Impact Of Sales Promotions On When, What, And How Much To Buy` 
+
+* `[](2010) A Dynamic Model For Binary Panel Data With Unobserved Heterogeneity Admitting A` 
+
+## Judgment and Decision Making 
+* `[Administrator](2017) Information Processing Theory - Iresearchnet` 
+
+* `[Ashinoff Et Al](2022) Rethinking Delusions` 
+
+* `[Bettman](1970) Information Processing Models Of Consumer Behavior` 
+
+* `[Busemeyer Et Al](2006) Quantum Dynamics Of Human Decision-Making` 
+
+* `[Busemeyer_Townsend](1993) Decision Field Theory` 
+
+* `[Fischhoff_Broomell](2019) Judgment And Decision Making` 
+
+* `[Gershman_Daw](2017) Reinforcement Learning And Episodic Memory In Humans And Animals` 
+
+* `[Hastie](2001) Problems For Judgment And Decision Making` 
+
+* `[Huber Et Al](2014) Let'S Be Honest About The Attraction Effect` 
+
+* `[Lerner Et Al](2015) Emotion And Decision Making-1` 
+
+* `[Lerner Et Al](2015) Emotion And Decision Making` 
+
+* `[Loewenstein Et Al](2008) Neuroeconomics` 
+
+* `[Loewenstein_Wojtowicz](2023) The Economics Of Attention` 
+
+* `[Mellers Et Al](1998) Judgment And Decision Making` 
+
+* `[O'Doherty Et Al](2017) Learning, Reward, And Decision Making` 
+
+* `[Oppenheimer_Kelso](2015) Information Processing As A Paradigm For Decision Making` 
+
+* `[Phelps Et Al](2014) Emotion And Decision Making` 
+
+* `[Ratcliff Et Al](2016) Diffusion Decision Model` 
+
+* `[Slovic Et Al](1977) Behavioral Decision Theory` 
 
 ## Marketing Decisions and Methods 
 * `[Aaker Et Al](2004) When Good Brands Do Bad` 
@@ -682,23 +992,31 @@
 
 * `[Assmus Et Al](1984) How Advertising Affects Sales` 
 
+* `[Axelrod_Hamilton](1981) The Evolution Of Cooperation` 
+
 * `[Barwise](1995) Good Empirical Generalizations` 
+
+* `[Bass Et Al](1994) Why The Bass Model Fits Without Decision Variables` 
 
 * `[Bass](1969) A New Product Growth For Model Consumer Durables` 
 
 * `[Bass](1995) Empirical Generalizations And Marketing Science` 
 
-* `[Batra Et Al]() The Brand Personality Component Of Brand Goodwill` 
+* `[Batra Et Al](1993) The Brand Personality Component Of Brand Goodwill` 
 
 * `[Bawa](1990) Modeling Inertia And Variety Seeking Tendencies In Brand Choice Behavior` 
 
 * `[Beckwith_Lehmann](1975) The Importance Of Halo Effects In Multi-Attribute Attitude Models` 
+
+* `[Berger Et Al](2020) Uniting The Tribes` 
 
 * `[Berlyne](1970) Novelty, Complexity, And Hedonic Value` 
 
 * `[Bijmolt Et Al](2005) New Empirical Generalizations On The Determinants Of Price Elasticity` 
 
 * `[Bilgicer Et Al](2015) The Long-Term Effect Of Multichannel Usage On Sales` 
+
+* `[Biyalogorsky Et Al](2006) Stuck In The Past-1` 
 
 * `[Biyalogorsky Et Al](2006) Stuck In The Past` 
 
@@ -728,15 +1046,21 @@
 
 * `[Corfman_Lehmann](1993) The Importance Of Others' Welfare In Evaluating Bargaining Outcomes` 
 
+* `[Crick](2021) Qualitative Research In Marketing` 
+
 * `[Dekimpe_Hanssens](2003) Persistence Modeling For Assessing Marketing Strategy Performance` 
 
 * `[Ding Et Al](2020) The Past, Present, And Future Of Measurement And Methods In Marketing Analysis` 
 
 * `[E. Hunter Et Al](1986) Imeta-Analysis` 
 
+* `[Edeling Et Al](2021) The Marketing–Finance Interface-1` 
+
 * `[Edeling Et Al](2021) The Marketing–Finance Interface` 
 
 * `[Ehrenberg](1995) Empirical Generalisations, Theory, And Method` 
+
+* `[Eisend_Lehmann](2016) Assessing The Enduring Impact Of Influential Papers` 
 
 * `[Fader Et Al](2005) “Counting Your Customers” The Easy Way` 
 
@@ -750,11 +1074,15 @@
 
 * `[Fournier](1998) Consumers And Their Brands` 
 
-* `[Galavotti Et Al](2018) Sophisticated Bidders In Beauty-Contest Auctions` 
+* `[Frösén_Stewart](2022) Marketing Through The Eyes Of Senior Management` 
 
 * `[Geyskens Et Al](2009) A Review And Evaluation Of Meta-Analysis Practices In Management Research` 
 
 * `[Givon](1984) Variety Seeking Through Brand Switching` 
+
+* `[Godes_Mayzlin](2004) Using Online Conversations To Study Word-Of-Mouth Communication-1` 
+
+* `[Godes_Mayzlin](2004) Using Online Conversations To Study Word-Of-Mouth Communication-2` 
 
 * `[Godes_Mayzlin](2004) Using Online Conversations To Study Word-Of-Mouth Communication` 
 
@@ -762,13 +1090,19 @@
 
 * `[Goldenberg Et Al](2009) The Role Of Hubs In The Adoption Process` 
 
-* `[Golder_Tellis](1993) Pioneer Advantage` 
-
 * `[Grewal Et Al](2018) Meta-Analysis` 
+
+* `[Gupta Et Al](2004) Valuing Customers` 
+
+* `[Gupta_Livne](1990) Testing The Emergence And Effect Of The Reference Outcome In An Integrative-1` 
 
 * `[Gupta_Livne](1990) Testing The Emergence And Effect Of The Reference Outcome In An Integrative` 
 
+* `[Gupta_Zeithaml](2006) Customer Metrics And Their Impact On Financial Performance-1` 
+
 * `[Gupta_Zeithaml](2006) Customer Metrics And Their Impact On Financial Performance` 
+
+* `[Hanssens_Pauwels](2016) Demonstrating The Value Of Marketing` 
 
 * `[Harlam Et Al](1995) Impact Of Bundle Type, Price Framing And Familiarity On Purchase Intention For` 
 
@@ -786,25 +1120,35 @@
 
 * `[Homburg Et Al](2005) Do Satisfied Customers Really Pay More` 
 
+* `[Homburg Et Al](2015) The Loss Of The Marketing Department’S Influence` 
+
 * `[Hutchinson Et Al](2000) Unobserved Heterogeneity As An Alternative Explanation For “Reversal” Effects` 
 
 * `[Jaworski_Kohli](1993) Market Orientation` 
 
 * `[Joshi_Hanssens](2010) The Direct And Indirect Effects Of Advertising Spending On Firm Value` 
 
-* `[Kahn_Lehmann](1991) Modeling Choice Among Assortments` 
+* `[Kahn_Lehmann]() Modeling Choice Among Assortments` 
 
 * `[Kalyanaram Et Al](1995) Order Of Market Entry` 
 
 * `[Kardes Et Al](1993) Brand Retrieval, Consideration Set Composition, Consumer Choice, And The` 
 
+* `[Katsikeas Et Al](2016) Assessing Performance Outcomes In Marketing` 
+
 * `[Keller](2002) Branding And Brand Equity` 
+
+* `[Keller_Lehmann](2006) Brands And Branding-1` 
+
+* `[Keller_Lehmann](2006) Brands And Branding` 
 
 * `[Kopalle_Lehmann](1995) The Effects Of Advertised And Observed Quality On Expectations About New` 
 
 * `[Kopalle_Lehmann](1997) Alpha Inflation` 
 
 * `[Kopalle_Lehmann](2001) Strategic Management Of Expectations` 
+
+* `[Kopalle_Lehmann](2006) Setting Quality Expectations When Entering A Market-1` 
 
 * `[Kopalle_Lehmann](2006) Setting Quality Expectations When Entering A Market` 
 
@@ -818,9 +1162,13 @@
 
 * `[Lehmann Et Al](2008) The Structure Of Survey-Based Brand Metrics` 
 
+* `[Lehmann Et Al](2011) Sophistication In Research In Marketing` 
+
 * `[Lehmann](1974) Some Alternatives To Linear Factor Analysis For Variable Grouping Applied To` 
 
 * `[Lehmann](1988) An Alternative Procedure For Assessing Convergent And Discriminant Validity` 
+
+* `[Lehmann](2001) The Impact Of Altruism And Envy On Competitive Behavior And Satisfaction-1` 
 
 * `[Lehmann](2001) The Impact Of Altruism And Envy On Competitive Behavior And Satisfaction` 
 
@@ -832,7 +1180,7 @@
 
 * `[Liang Et Al](2018) “What You Measure Is What You Will Get”` 
 
-* `[Liaukonytė_Žaldokas](2022) Background Noise` 
+* `[Liaukonyte_Zaldokas](2019) Background Noise` 
 
 * `[Lodish Et Al](1995) How T` 
 
@@ -854,11 +1202,15 @@
 
 * `[Menon_Kahn](1995) The Impact Of Context On Variety Seeking In Product Choices` 
 
+* `[Mizik_Jacobson](2003) Stock Return Response Modeling` 
+
 * `[Mizik_Jacobson](2003) Trading Off Between Value Creation And Value Appropriation` 
 
 * `[Mizik_Jacobson](2008) The Financial Value Impact Of Perceptual Brand Attributes` 
 
 * `[Montoya-Weiss_Calantone](1994) Determinants Of New Product Performance` 
+
+* `[Moorman_Miner](1997) The Impact Of Organizational Memory On New Product Performance And Creativity-1` 
 
 * `[Moorman_Miner](1997) The Impact Of Organizational Memory On New Product Performance And Creativity` 
 
@@ -872,8 +1224,6 @@
 
 * `[Muniz_O’Guinn](2001) Brand Community` 
 
-* `[Neslin_Greenhalgh](1983) Nash'S Theory Of Cooperative Games As A Predictor Of The Outcomes Of` 
-
 * `[O'Guinn_Faber](1989) Compulsive Buying` 
 
 * `[O'Sullivan Et Al](2009) Empirical Evidence Of The Stock Market'S (Mis)Pricing Of Customer Satisfaction` 
@@ -885,6 +1235,8 @@
 * `[Palmatier Et Al](2006) Factors Influencing The Effectiveness Of Relationship Marketing` 
 
 * `[Pansari_Kumar](2017) Customer Engagement` 
+
+* `[Parasuraman Et Al](1985) A Conceptual Model Of Service Quality And Its Implications For Future Research-1` 
 
 * `[Parasuraman Et Al](1985) A Conceptual Model Of Service Quality And Its Implications For Future Research` 
 
@@ -914,6 +1266,8 @@
 
 * `[Rust Et Al](2004) Return On Marketing` 
 
+* `[Rutz_Watson](2019) Endogeneity And Marketing Strategy Research` 
+
 * `[Sawyer](1987) Book Review` 
 
 * `[Seiders Et Al](2005) Do Satisfied Customers Buy More` 
@@ -922,15 +1276,33 @@
 
 * `[Simon_Sullivan](1993) The Measurement And Determinants Of Brand Equity` 
 
+* `[Simonson](1990) The Effect Of Purchase Quantity And Timing On Variety-Seeking Behavior-1` 
+
 * `[Simonson](1990) The Effect Of Purchase Quantity And Timing On Variety-Seeking Behavior` 
+
+* `[Skålén Et Al](2023) Marketing-As-Practice` 
 
 * `[Sozuer Et Al](2020) The Past, Present, And Future Of Marketing Strategy` 
 
 * `[Srinivasan Et Al](2005) An Approach To The Measurement, Analysis, And Prediction Of Brand Equity And` 
 
+* `[Srinivasan Et Al](2009) Product Innovations, Advertising, And Stock Returns` 
+
+* `[Srinivasan_Hanssens](2009) Marketing And Firm Value` 
+
+* `[Srivastava Et Al](1998) Market-Based Assets And Shareholder Value` 
+
+* `[Srivastava_Bharadwaj]() Marketing Strategy Meets Wall Street Conference 2022 Program` 
+
+* `[Stahl Et Al](2012) The Impact Of Brand Equity On Customer Acquisition, Retention, And Profit Margin-1` 
+
 * `[Stahl Et Al](2012) The Impact Of Brand Equity On Customer Acquisition, Retention, And Profit Margin` 
 
 * `[Sultan Et Al](1990) A Meta-Analysis Of Applications Of Diffusion Models` 
+
+* `[Swaminathan Et Al](2022) Brand Actions And Financial Consequences` 
+
+* `[Tellis Et Al](2009) Radical Innovation Across Nations-1` 
 
 * `[Tellis Et Al](2009) Radical Innovation Across Nations` 
 
@@ -942,9 +1314,13 @@
 
 * `[Trueman Et Al](2000) The Eyeballs Have It` 
 
+* `[Urbany Et Al](1989) All'S Not Fair In Pricing-1` 
+
 * `[Urbany Et Al](1989) All'S Not Fair In Pricing` 
 
 * `[Van Heerde Et Al](2013) Price And Advertising Effectiveness Over The Business Cycle` 
+
+* `[Varadarajan](2010) Strategic Marketing And Marketing Strategy` 
 
 * `[Wallendorf_Arnould](1991) We Gather Together` 
 
@@ -958,12 +1334,16 @@
 
 * `[Zaltman](1997) Rethinking Market Research` 
 
+* `[]() Nash'S Theory Of Cooperative Games As A Predictor Of The Outcomes Of` 
+
 * `[De Jong Et Al](2012) State-Dependence Effects In Surveys` 
 
 ## Math Models in Marketing 
 * `[Berger Et Al](2020) Uniting The Tribes` 
 
 * `[Blei](2012) Probabilistic Topic Models` 
+
+* `[Bond Et Al](2012) A 61-Million-Person Experiment In Social Influence And Political Mobilization-1` 
 
 * `[Bond Et Al](2012) A 61-Million-Person Experiment In Social Influence And Political Mobilization` 
 
@@ -977,6 +1357,8 @@
 
 * `[Feld](1991) Why Your Friends Have More Friends Than You Do` 
 
+* `[Goel Et Al](2015) The Who-To-Follow System At Twitter-1` 
+
 * `[Goel Et Al](2015) The Who-To-Follow System At Twitter` 
 
 * `[González-Bailón Et Al](2011) The Dynamics Of Protest Recruitment Through An Online Network` 
@@ -984,8 +1366,6 @@
 * `[Granovetter](1978) Threshold Models Of Collective Behavior` 
 
 * `[Kempe Et Al](2003) Maximizing The Spread Of Influence Through A Social Network` 
-
-* `[Konda_Borkar](1999) Actor-Critic--Type Learning Algorithms For Markov Decision Processes` 
 
 * `[Liben-Nowell_Kleinberg](2007) The Link-Prediction Problem For Social Networks` 
 
@@ -1001,8 +1381,6 @@
 
 * `[Park Et Al](2021) The Fateful First Consumer Review` 
 
-* `[Pfau_Vinyals](2017) Connecting Generative Adversarial Networks And Actor-Critic Methods` 
-
 * `[Porter Et Al](2009) Communities In Networks` 
 
 * `[Qin Et Al](2020) Ride-Hailing Order Dispatching At Didi Via Reinforcement Learning` 
@@ -1011,8 +1389,14 @@
 
 * `[Rothkopf](2007) Thirteen Reasons Why The Vickrey-Clarke-Groves Process Is Not Practical` 
 
+* `[Russo Et Al](2020) A Tutorial On Thompson Sampling` 
+
+* `[Tufekci](2020) This Overlooked Variable Is The Key To The Pandemic` 
+
 * `[Varian_Harris](2014) The Vcg Auction In Theory And Practice` 
+
+* `[Vorobeychik](2012) Simulation-Based Game Theoretic Analysis Of Keyword Auctions With` 
 
 * `[Watts](2002) A Simple Model Of Global Cascades On Random Networks` 
 
-* `[Zhou Et Al](2022) A Survey Of Information Cascade Analysis` 
+* `Networks-Book-Ch16` 

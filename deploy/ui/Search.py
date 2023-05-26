@@ -11,7 +11,7 @@ from ui.utils import query, haystack_version, haystack_init_
 from ui.__init__ import version
 
 # TODO: Rewrite API rest wait time
-DEFAULT_QUESTION = "the weaknesses  of information processing"
+DEFAULT_QUESTION = "what's customer equity?"
 DEFAULT_QUESTION_AT_STARTUP = os.getenv("DEFAULT_QUESTION_AT_STARTUP", DEFAULT_QUESTION)
 DEFAULT_ANSWER_AT_STARTUP = os.getenv("DEFAULT_ANSWER_AT_STARTUP", " ")
 ENABLE_SEARCH = True

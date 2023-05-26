@@ -6,7 +6,7 @@ import os
 
 pdf_parent_folder = 'data/pdf'
 out_file = 'data/list_of_papers.md'
-deploy_file = 'deploy/data/list_of_papers.md'
+deploy_file = 'deploy/documents/list_of_papers.md'
 
 
 def get_file_names(file_path, file_dict):

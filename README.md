@@ -67,7 +67,15 @@ If you are interested in fine-tuning large models with limited GPU, I strongly r
 * Select all pdf and right click, management attachments, sent to tablet
 * Use `Adobe Pro` or `Abbyy` for batch text recognition
 
-### Extract Plain Text
+### Extract Plain Text (Better Way)
+
+* Use Adobe Pro to recognize and export pdf to word document
+* use Pandoc to convert to plain text:
+
+   ``pandoc -f docx -i file_name.docx -t plain -o file_name.txt``
+
+### Extract Plain Text (Old Way)
+
 
 Use virtual environment to manage python packages. Many of them may have conflict with your current packages.
 
